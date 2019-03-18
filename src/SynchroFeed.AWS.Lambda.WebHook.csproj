@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="config.dev.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="2.1.2" />
   </ItemGroup>
 
