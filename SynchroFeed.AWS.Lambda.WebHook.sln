@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchroFeed.AWS.Lambda.WebHook", "src\SynchroFeed.AWS.Lambda.WebHook.csproj", "{75138191-5E55-479E-B840-91673619D933}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DA8DA8B-51FF-40DB-BE03-37F15BEEB374}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SynchroFeed.AWS.Lambda.WebHook.Test", "test\SynchroFeed.AWS.Lambda.WebHook.Test.csproj", "{B810711F-1B91-4E76-90DB-0EC26231C82F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75138191-5E55-479E-B840-91673619D933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75138191-5E55-479E-B840-91673619D933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75138191-5E55-479E-B840-91673619D933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75138191-5E55-479E-B840-91673619D933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B810711F-1B91-4E76-90DB-0EC26231C82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B810711F-1B91-4E76-90DB-0EC26231C82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B810711F-1B91-4E76-90DB-0EC26231C82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B810711F-1B91-4E76-90DB-0EC26231C82F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8972888-C168-4479-8A3C-FAB65C3FD829}
+	EndGlobalSection
+EndGlobal

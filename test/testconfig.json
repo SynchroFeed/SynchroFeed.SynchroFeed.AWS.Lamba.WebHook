@@ -1,0 +1,9 @@
+{
+  "awsCredentials": {
+    "accessKey": "TESTACCESSKEY",
+    "secretKey": "TESTSECRETKEY"
+  },
+  "awsSns": {
+    "topic": "arn:aws:sns:us-east-1:TEST:TestFeed"
+  }
+}
