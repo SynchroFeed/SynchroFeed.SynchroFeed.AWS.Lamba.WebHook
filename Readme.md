@@ -9,7 +9,7 @@ that represents an action against a package on a feed. That event is passed on t
 other process like the *SynchroFeed.Listener*. 
 
 For example, Proget supports registering a webhook when a package has been added,
-deleted, deployed, promoted or purged on a feed. By adding the following configuration to the Content section of a webhook,
+deleted, deployed, promoted or purged on a feed. By adding the following configuration to the Content section of a Proget webhook,
 a message will be POSTed to the URL associated with the Proget webhook. 
 
 ```
@@ -31,7 +31,7 @@ More details are available in Inedo's Proget WebHook [documentation](https://ine
 ### Message Format
 This library doesn't validate the message posted to it. It just passes the message body on to the configured AWS SNS queue. Whatever is listening
 to the SNS queue, will parse and validate the message and determine how to handle it. The *SynchroFeed.Listener* supports handling messages with 
-the following format.
+the following format which matches the Proget webhook configuration above.
 
 ```
 {
@@ -74,18 +74,18 @@ Once you have edited your template and code you can use the following command li
 
 Restore dependencies
 ```
-    cd "AlkamiFeedWebAPI"
+    cd "SynchroFeed.AWS.Lamba.WebHook"
     dotnet restore
 ```
 
 Execute unit tests
 ```
-    cd "AlkamiFeedWebAPI/test/AlkamiFeedWebAPI.Tests"
+    cd "SynchroFeed.AWS.Lamba.WebHook/test"
     dotnet test
 ```
 
 Deploy application
 ```
-    cd "AlkamiFeedWebAPI/src/AlkamiFeedWebAPI"
+    cd "SynchroFeed.AWS.Lamba.WebHook/src"
     dotnet lambda deploy-serverless
 ```
