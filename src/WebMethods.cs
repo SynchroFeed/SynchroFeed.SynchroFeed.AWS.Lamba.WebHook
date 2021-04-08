@@ -1,20 +1,21 @@
 #region header
+
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright company="Robert Vandehey" file="WebMethods.cs">
 // MIT License
-// 
+//
 // Copyright(c) 2018 Robert Vandehey
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,29 +25,31 @@
 // SOFTWARE.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-#endregion
-using System;
-using System.Collections.Generic;
-using Amazon.Lambda.Core;
+
+#endregion header
+
 using Amazon.Lambda.APIGatewayEvents;
+using Amazon.Lambda.Core;
 using Amazon.Runtime;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
-
-using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("SynchroFeed.AWS.Lambda.WebHook.Test")]
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+
 namespace SynchroFeed.AWS.Lambda.WebHook
 {
     public class WebMethods
     {
-        internal Func<BasicAWSCredentials, IAmazonSimpleNotificationService> GetSnsClientFunc = credentials => new AmazonSimpleNotificationServiceClient(credentials);
-        internal readonly Func<HostBuilderContext, IConfigurationBuilder, IConfigurationBuilder> ConfigurationBuilderFunc = InitializeConfigOption;
+        internal static Func<BasicAWSCredentials, IAmazonSimpleNotificationService> GetSnsClientFunc = credentials => new AmazonSimpleNotificationServiceClient(credentials);
+        internal static Func<HostBuilderContext, IConfigurationBuilder, IConfigurationBuilder> ConfigurationBuilderFunc = InitializeConfigOption;
 
         internal readonly AwsCredentials awsCredentials;
         internal readonly AwsSns awsSns;
@@ -57,26 +60,13 @@ namespace SynchroFeed.AWS.Lambda.WebHook
         /// Initializes a new instance of the <see cref="WebMethods"/> class.
         /// </summary>
         public WebMethods()
-            : this(null)
         {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WebMethods"/> class.
-        /// </summary>
-        /// <param name="configurationBuilderFunc">The configuration builder function used for unit testing.</param>
-        internal WebMethods(Func<HostBuilderContext, IConfigurationBuilder, IConfigurationBuilder> configurationBuilderFunc = null)
-        {
-            if (configurationBuilderFunc != null)
-                ConfigurationBuilderFunc = configurationBuilderFunc;
-
             var builder = InitializeHostBuilder();
             var host = builder.Build();
 
             awsCredentials = host.Services.GetRequiredService<IOptions<AwsCredentials>>().Value;
             awsSns = host.Services.GetRequiredService<IOptions<AwsSns>>().Value;
         }
-
 
         private IHostBuilder InitializeHostBuilder()
         {
