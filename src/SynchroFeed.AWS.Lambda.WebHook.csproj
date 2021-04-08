@@ -1,14 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
-
   <ItemGroup>
     <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="2.1.2" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.4.0" />
     <PackageReference Include="Amazon.Lambda.Core" Version="2.0.0" />
@@ -22,7 +19,6 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="config.dev.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -31,5 +27,4 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
