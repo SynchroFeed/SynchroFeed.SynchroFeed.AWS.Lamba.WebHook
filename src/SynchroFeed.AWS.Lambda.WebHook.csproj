@@ -11,7 +11,7 @@
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="2.1.1" />
     <PackageReference Include="AWSSDK.Core" Version="3.7.204.5" />
-    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.200.57" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.200.58" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
