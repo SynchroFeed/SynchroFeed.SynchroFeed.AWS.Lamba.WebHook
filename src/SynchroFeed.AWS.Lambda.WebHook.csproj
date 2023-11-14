@@ -10,7 +10,7 @@
     <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.7.0" />
     <PackageReference Include="Amazon.Lambda.Core" Version="2.2.0" />
     <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="2.1.1" />
-    <PackageReference Include="AWSSDK.Core" Version="3.7.300" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.300.1" />
     <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.300" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
